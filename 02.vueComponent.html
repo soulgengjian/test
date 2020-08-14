@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <mycomponent></mycomponent>
+    <mycomponent></mycomponent>
+    <mycomponent></mycomponent>
+</div>
+<script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //全局组件
+    // Vue.component('mycomponent',{
+    //     template :`<div><button>按钮被点击-{{count}}次</button>`
+    //     data() {
+    //         return{
+    //             count:0
+    //
+    //         }
+    //
+    //     }
+    // })
+    //局部组件
+    let mycomponent = {
+        template: `<div><button>按钮被点击-{{count}}次</button></div>`,
+        data() {
+            return {
+                count: 0
+            }
+        }
+    }
+
+    let vm1 = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methids:{
+
+        },
+        components:{
+            mycomponent
+        }
+    })
+</script>
+</body>
+</html>

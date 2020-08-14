@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+<h1>test info</h1>
+  <div id="app">
+            <h3>{{username}}</h3>
+      <h3 v-html="username"></h3>
+      <h3 v-text="username"></h3>
+      <hr>
+      <span v-if="!sex">男</span>
+      <span v-jf="!sex">女</span>
+      </hr>
+<!--v-0n 事件绑定@-->
+      <span v-show="sex">男</span>
+      <span v-show="sex">女</span>
+      <div :id="id">java7班</div>
+      <div :id="'id'">java7班</div>
+      <button @click="methodOne">按钮</button>
+
+      <ul>
+          <li v-for="item in users">{{item.name}},{{item.birthday}}</li>
+      </ul>
+      <ul>
+         <li>{{username,id}}</li> 
+      </ul>
+<!--      v-modle-->
+     <input type="text" placeholder="用户名" v-modle="nickname">
+      <input type="password" placeholder="用户密码" v-modle="password">
+      <input type="radio" v-modle="gender" value="female">女
+      <input type="checkbox" v-modle="hobby" value="male">男
+      <input type="checkbox" v-modle="hobby" value="1"> java
+      <input type="checkbox" v-modle="hobby" value="2">python
+      <input type="checkbox" v-modle="hobby"value="3">.Net
+      <input type="checkbox" v-modle="hobby" value="4">#c
+       <select v-modle="city">
+         <option value="001">上海</option>
+         <option value="001">深圳</option>
+         <option value="001">广州</option>
+         <option value="001">北京</option>
+         <option value="001">重庆</option>
+
+       </select>
+  </div>
+
+<!--      vue:数据驱动,组件系统
+          MVVM框架,                     -->
+<!--         M:model 数据                   -->
+<!--         V:view 视图                    -->
+<!--         vm:viewModel 数据到视图中间的一个"管理者"-->
+
+<script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+let vm = new Vue({
+    el:'#app',
+    data:{
+        city:'',
+        hobby:[],
+        gender:'',
+        nickname:'',
+        password:'123',
+        username:'<span>oldBob</span>',
+        sex:false,
+        id:1001,
+        user:{
+            id:9001,
+             name:"mike",
+            birthday:"2001-11-13",
+        } ,
+        users:[
+            {id:1001,name : 'bob1',birthday : '2011-11-12'},
+            {id:1001,name : 'bob2',birthday : '2011-11-13'},
+            {id:1001,name : 'bob3',birthday : '2011-11-14'},
+        ]
+        } ,
+    methods:{
+        methodOne(){
+            
+        }
+    }
+})
+</script>
+</body>
+
+</html>
+<!--          MVVM框架,                     -->
+<!--         M:model 数据                   -->
+<!--         V:view 视图                    -->
+<!--         vm:viewModel 数据到视图中间的一个"管理者"-->

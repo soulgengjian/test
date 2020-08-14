@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <mycomponent :message="msg"></mycomponent>
+</div>
+<script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let mycomponent = {
+        template: `<div><button@click="show">显示信息</button></div>`,
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            show() {
+                alert(this.message)
+            }
+        },
+        props: ['message']
+    }
+    let vm = new Vue({
+        el:"#app",
+       data:{
+            msg:'test msg123'
+        },
+        methids:{
+
+        },
+        components:{
+            mycomponent
+        }
+    })
+</script>
+</body>
+</html>
